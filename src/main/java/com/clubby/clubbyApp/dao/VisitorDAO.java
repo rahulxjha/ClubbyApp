@@ -7,13 +7,13 @@ public interface VisitorDAO {
 
     Visitor findById(Integer id);
 
-    void updateAllDetails(Visitor visitor);
-
     void updateEmail(Visitor visitor);
 
     void updatePhoneNum(Visitor visitor);
 
     void updatePassword(Visitor visitor);
 
-    void deleteYourDetails(Visitor visitor);
+    void deleteYourDetails(Integer id);
+
+
 }

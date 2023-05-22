@@ -40,9 +40,8 @@ public class Visitor {
     public Visitor() {
     }
 
-    public Visitor(int id, String name, String lastName, String email, String password, String phoneNum, String gender,
+    public Visitor(String name, String lastName, String email, String password, String phoneNum, String gender,
                    String dateOfBirth, int age, String address) {
-        this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.email = email;

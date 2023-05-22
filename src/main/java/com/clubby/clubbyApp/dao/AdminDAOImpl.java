@@ -29,7 +29,6 @@ public class AdminDAOImpl implements AdminDAO {
     public void adminLogin(String userName, String password) {
         TypedQuery<Admin> theQuery = entityManager.createQuery("FROM Admin WHERE userName=:theUsername AND " +
                 "password=:thePassword",Admin.class);
-
         theQuery.setParameter("theUsername" ,userName);
         theQuery.setParameter("thePassword", password);
     }
@@ -59,12 +58,14 @@ public class AdminDAOImpl implements AdminDAO {
     }
 
     @Override
+    @Transactional
     public void delete(Integer id) {
         Visitor visitor = entityManager.find(Visitor.class, id);
         entityManager.remove(visitor);
     }
 
     @Override
+    @Transactional
     public int deleteAll() {
         int numRowsDeleted = entityManager.createQuery("DELETE FROM Visitor").executeUpdate();
         return numRowsDeleted;

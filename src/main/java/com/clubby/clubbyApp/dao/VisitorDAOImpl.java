@@ -28,12 +28,6 @@ public class VisitorDAOImpl implements VisitorDAO {
 
     @Override
     @Transactional
-    public void updateAllDetails(Visitor visitor) {
-        entityManager.merge(visitor);
-    }
-
-    @Override
-    @Transactional
     public void updateEmail(Visitor visitor) {
         entityManager.merge(visitor);
     }
@@ -51,7 +45,9 @@ public class VisitorDAOImpl implements VisitorDAO {
     }
 
     @Override
-    public void deleteYourDetails(Visitor visitor) {
+    @Transactional
+    public void deleteYourDetails(Integer id) {
+        Visitor visitor = entityManager.find(Visitor.class, id);
         entityManager.remove(visitor);
     }
 
