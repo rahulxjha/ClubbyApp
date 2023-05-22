@@ -148,6 +148,8 @@ public class ClubbyAppApplication {
 							System.out.println("Enter your updated email");
 							String updateEmail = scn.next();
 							visitor.setEmail(updateEmail);
+
+							visitorDAO.updateEmail(visitor);
 							System.out.println("Updated Details : "+ visitor);
 							break;
 
@@ -158,6 +160,8 @@ public class ClubbyAppApplication {
 							System.out.println("Enter your new password");
 							String updatePassword = scn.next();
 							visitor.setPassword(updatePassword);
+
+							visitorDAO.updatePassword(visitor);
 							System.out.println("Updated details" + visitor);
 							break;
 
@@ -169,6 +173,7 @@ public class ClubbyAppApplication {
 							String updatePhoneNum = scn.next();
 							visitor.setPhoneNum(updatePhoneNum);
 
+							visitorDAO.updatePhoneNum(visitor);
 							System.out.println("Updated details: "+ visitor);
 							break;
 
